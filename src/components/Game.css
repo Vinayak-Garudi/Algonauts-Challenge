@@ -1,10 +1,35 @@
-.carousel-item {
+.portfolio-box {
+    margin-left: 40px;
     border: 2px solid black;
-    height: 250px;
-    width: 200px;
-    background-color: aqua;
+    border-radius: 25px;
+    height: 230px;
+    width: 210px;
+    background-color: rgb(1, 1, 43);
+    color: aliceblue;
+    padding: 5px;
+    box-shadow: 5px 10px 5px rgba(18, 27, 95, 0.411);
 }
 
-.portfolio-section {
-    width: fit-content;
+
+.portfolioDesc {
+    margin: 5px;
+}
+
+
+.heading {
+    margin: 20px;
+}
+
+.goBtn {
+    background-color: blanchedalmond;
+    font-weight: bold;
+    margin-left: 130px;
+    margin-top: 25px;
+    border-radius: 10px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.goBtn:hover {
+    background-color: whitesmoke;
 }

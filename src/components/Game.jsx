@@ -5,17 +5,20 @@ import './Game.css'
 export const Game = () => {
   const navigate = useNavigate()
 
-  const HandleBuyPortfolio = () => {
+  const HandleGo = () => {
     console.log("handleBuyPortfolio clicked")
     navigate('/afterBuy')
   }
   return (
     <div className='game'>
-      <h3>Portfolios...</h3>
-      <div className="carousel-inner">
-        <div className="carousel-item active">
-          Portfolio 1
-          <button onClick={HandleBuyPortfolio}>Buy</button>
+      <div className='heading'><h3>Portfolios...</h3></div>
+      <div className="portfolio-box-container">
+        <div className="portfolio-box">
+          <h3>Portfolio 1</h3>
+          <div className="portfolioDesc">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, illo!</p>
+            <button className='goBtn' onClick={HandleGo}>Go</button>
+          </div>
         </div>
 
       </div>
