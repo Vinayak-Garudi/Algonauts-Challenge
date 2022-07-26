@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react'
 // import { useParams } from 'react-router-dom';
 // import axios from 'axios'
-import './AfterBuy.css'
+import '../AfterBuy/AfterBuy.css'
 import HDFC from '../HDFCBANK.json';
 import Relaince from '../relaience.json';
-import Vedanta from '../VEDANTA.json';
-import BhartiAirtel from '../BHARTIAIRTEL.json';
-import MandM from '../M&M.json';
-import YesBank from '../YESBANK.json';
+import Vedanta from '../VEDANTA.json'
 
-export const AfterBuy = () => {
+export const AfterBuyH = () => {
 
     const [priceID, setPriceID] = useState(0)
     const [day, setDay] = useState(1)
@@ -19,10 +16,10 @@ export const AfterBuy = () => {
     // to handle next day
     const handleNextDay = () => {
         // we can take any one stock of that particular year
-        console.log(YesBank.length)
-        if (day < YesBank.length) {
+        console.log(HDFC.length)
+        if (day < HDFC.length) {
             setDay(day + 1)
-            for (let day = 1; day < YesBank.length; day++) {
+            for (let day = 1; day < HDFC.length; day++) {
                 setPriceID(priceID + 1)
                 // console.log("price id: ", priceID)
             }
@@ -38,18 +35,18 @@ export const AfterBuy = () => {
     const [quantityOwned2, setQuantityOwned2] = useState(0)
     const [quantityOwned3, setQuantityOwned3] = useState(0)
 
-    let stockValue1 = BhartiAirtel[priceID].price * quantityOwned1
-    let stockValue2 = MandM[priceID].price * quantityOwned2
-    let stockValue3 = YesBank[priceID].price * quantityOwned3
+    let stockValue1 = HDFC[priceID].price * quantityOwned1
+    let stockValue2 = Relaince[priceID].price * quantityOwned2
+    let stockValue3 = Vedanta[priceID].price * quantityOwned3
 
     // current stock value
     const [stockQuantity1, setStockQuantity1] = useState(0)
     const [stockQuantity2, setStockQuantity2] = useState(0)
     const [stockQuantity3, setStockQuantity3] = useState(0)
 
-    let currentStockValue1 = BhartiAirtel[priceID].price * stockQuantity1
-    let currentStockValue2 = MandM[priceID].price * stockQuantity2
-    let currentStockValue3 = YesBank[priceID].price * stockQuantity3
+    let currentStockValue1 = HDFC[priceID].price * stockQuantity1
+    let currentStockValue2 = Relaince[priceID].price * stockQuantity2
+    let currentStockValue3 = Vedanta[priceID].price * stockQuantity3
 
 
 
@@ -147,7 +144,7 @@ export const AfterBuy = () => {
                     <tbody>
                         <tr>
                             <th scope="row">Stock 1</th>
-                            <td>{BhartiAirtel[priceID].price}</td>
+                            <td>{HDFC[priceID].price}</td>
                             <td><input type="number" className='qntyInput' id="stock_quantity_1" placeholder='Qty...' onChange={(e) => setStockQuantity1(Number(e.target.value))} /></td>
                             <td><button className='buttons' onClick={handleBuy1}>Buy</button></td>
                             <td><button className='buttons' onClick={handleSell1}>Sell</button></td>
@@ -157,7 +154,7 @@ export const AfterBuy = () => {
                         </tr>
                         <tr>
                             <th scope="row">Stock 2</th>
-                            <td>{MandM[priceID].price}</td>
+                            <td>{Relaince[priceID].price}</td>
                             <td><input type="number" className='qntyInput' placeholder='Qty...' onChange={(e) => setStockQuantity2(Number(e.target.value))} /></td>
                             <td><button className='buttons' onClick={handleBuy2}>Buy</button></td>
                             <td><button className='buttons' onClick={handleSell2}>Sell</button></td>
@@ -167,7 +164,47 @@ export const AfterBuy = () => {
                         </tr>
                         <tr>
                             <th scope="row">Stock 3</th>
-                            <td>{YesBank[priceID].price}</td>
+                            <td>{Vedanta[priceID].price}</td>
+                            <td><input type="number" className='qntyInput' placeholder='Qty...' onChange={(e) => setStockQuantity3(Number(e.target.value))} /></td>
+                            <td><button className='buttons' onClick={handleBuy3}>Buy</button></td>
+                            <td><button className='buttons' onClick={handleSell3}>Sell</button></td>
+                            <td>{quantityOwned3}</td>
+                            <td>{stockValue3}</td>
+                            {/* <td><button>Hold</button></td> */}
+                        </tr>
+                        <tr>
+                            <th scope="row">Stock 4</th>
+                            <td>{Vedanta[priceID].price}</td>
+                            <td><input type="number" className='qntyInput' placeholder='Qty...' onChange={(e) => setStockQuantity3(Number(e.target.value))} /></td>
+                            <td><button className='buttons' onClick={handleBuy3}>Buy</button></td>
+                            <td><button className='buttons' onClick={handleSell3}>Sell</button></td>
+                            <td>{quantityOwned3}</td>
+                            <td>{stockValue3}</td>
+                            {/* <td><button>Hold</button></td> */}
+                        </tr>
+                        <tr>
+                            <th scope="row">Stock 5</th>
+                            <td>{Vedanta[priceID].price}</td>
+                            <td><input type="number" className='qntyInput' placeholder='Qty...' onChange={(e) => setStockQuantity3(Number(e.target.value))} /></td>
+                            <td><button className='buttons' onClick={handleBuy3}>Buy</button></td>
+                            <td><button className='buttons' onClick={handleSell3}>Sell</button></td>
+                            <td>{quantityOwned3}</td>
+                            <td>{stockValue3}</td>
+                            {/* <td><button>Hold</button></td> */}
+                        </tr>
+                        <tr>
+                            <th scope="row">Stock 6</th>
+                            <td>{Vedanta[priceID].price}</td>
+                            <td><input type="number" className='qntyInput' placeholder='Qty...' onChange={(e) => setStockQuantity3(Number(e.target.value))} /></td>
+                            <td><button className='buttons' onClick={handleBuy3}>Buy</button></td>
+                            <td><button className='buttons' onClick={handleSell3}>Sell</button></td>
+                            <td>{quantityOwned3}</td>
+                            <td>{stockValue3}</td>
+                            {/* <td><button>Hold</button></td> */}
+                        </tr>
+                        <tr>
+                            <th scope="row">Stock 7</th>
+                            <td>{Vedanta[priceID].price}</td>
                             <td><input type="number" className='qntyInput' placeholder='Qty...' onChange={(e) => setStockQuantity3(Number(e.target.value))} /></td>
                             <td><button className='buttons' onClick={handleBuy3}>Buy</button></td>
                             <td><button className='buttons' onClick={handleSell3}>Sell</button></td>

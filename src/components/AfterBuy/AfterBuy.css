@@ -38,6 +38,14 @@
 
 .GA {
     float: left;
-    margin-right: 250px;
+    margin-right: 200px;
 }
 
+.differenceGA {
+    float: right;
+    margin-right: 170px;
+}
+
+.qntyInput {
+    width: 77px;
+}
